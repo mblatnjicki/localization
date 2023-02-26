@@ -19,10 +19,4 @@ class LocalizationTranslation extends ActiveRecord
             [['translation'], 'string']
         ];
     }
-
-
-    public function saveOrUpdate()
-    {
-        echo $this->localization_key_id; die;
-    }
 }

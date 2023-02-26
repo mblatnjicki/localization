@@ -25,6 +25,9 @@ $config = [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
+        'exportConversion' => [
+            'class' => 'app\components\ExportConversionComponent',
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
@@ -53,10 +56,15 @@ $config = [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'language'
                 ],
+                'GET localization/keys' => 'localization-key/index',
+                'OPTIONS localization/keys' => 'localization-key/options',
                 'POST localization/keys' => 'localization-key/create',
                 'DELETE localization/keys/<id:\d+>' => 'localization-key/delete',
                 'GET localization/translations' => 'localization-translation/index',
+                'OPTIONS localization/translations' => 'localization-translation/options',
                 'PUT localization/translations' => 'localization-translation/update',
+                'OPTIONS localization/export' => 'localization-translation/options',
+                'POST localization/export' => 'localization-translation/export',
             ],
         ]
     ],
